@@ -4,4 +4,8 @@
 @smoke
 Scenario: Add two numbers
 	Given user checks endpoint for different languages
-#	Then the result sould be the same for each language
+		| Language |
+		| en       |
+		| es       |
+		| br       |
+	Then the result sould be the same for each language

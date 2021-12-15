@@ -19,6 +19,6 @@ namespace SharpGaming.Utils
         public static string Pass => new Faker().Internet.Password();
         public static string Day => new Bogus.Faker().Random.Number(1, 28).ToString();
         public static string Month => new Bogus.Faker().Random.Number(1, 12).ToString();
-        public static string Year => new Bogus.Faker().Random.Number(1901, 2002).ToString();
+        public static string Year => new Bogus.Faker().Random.Number(1902, 2002).ToString();
     }
 }

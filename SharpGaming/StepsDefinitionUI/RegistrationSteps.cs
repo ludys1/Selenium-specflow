@@ -27,14 +27,6 @@ namespace SharpGaming.StepsDefinition
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             driver.Navigate().GoToUrl("https://www.oddsking.com/");
             homeAndRegistrationPage = new HomeAndRegistrationPage(driver);
-
-            //DefaultWait<IWebDriver> fluentWait = new DefaultWait<IWebDriver>(driver);
-            //fluentWait.Timeout = TimeSpan.FromSeconds(5);
-            //fluentWait.PollingInterval = TimeSpan.FromMilliseconds(250);
-            ///* Ignore the exception - NoSuchElementException that indicates that the element is not present */
-            //fluentWait.IgnoreExceptionTypes(typeof(NoSuchElementException));
-            //fluentWait.Message = "Element to be searched not found";
-
         }
 
         [Given(@"user CTA register button")]
@@ -46,43 +38,48 @@ namespace SharpGaming.StepsDefinition
         [When(@"user fill the register form")]
         public void WhenUserFillTheRegisterForm()
         {
-
             homeAndRegistrationPage.FillEmailField();
             homeAndRegistrationPage.FillUserNameField();
-            var password = homeAndRegistrationPage.FillPasswordField();
+            homeAndRegistrationPage.FillPasswordField();
             homeAndRegistrationPage.ClickOnCheckBox();
-            //Thread.Sleep(2000);
-            homeAndRegistrationPage.WaitForContinue(driver, password);
-            Thread.Sleep(2000);
+            homeAndRegistrationPage.WaitForContinueOnAccounPage(driver);
             homeAndRegistrationPage.ClickContinueOnAccountForm();
             homeAndRegistrationPage.FillFirstNameField();
             homeAndRegistrationPage.FillLastNameField();
             homeAndRegistrationPage.FillDayOfBirth();
             homeAndRegistrationPage.FillMonthOfBirth();
             homeAndRegistrationPage.FillYearOfBirth();
-            //Thread.Sleep(2000);
             homeAndRegistrationPage.ClickContinueOnPersonalForm();
             homeAndRegistrationPage.ClickContinueOnPersonalForm();
             homeAndRegistrationPage.FillTelephoneNumber();
             homeAndRegistrationPage.OpenSecurityQuestionList();
             homeAndRegistrationPage.SelectSecurityQuestion();
             homeAndRegistrationPage.OpenSecurityQuestionList();
-            //Thread.Sleep(2000);
             homeAndRegistrationPage.FillSecurityQuestionAnswer();
-            //Thread.Sleep(2000);
             homeAndRegistrationPage.RegainFocusOnPage();
-            //Thread.Sleep(2000);
+            homeAndRegistrationPage.WaitForContinueOnContactPage(driver);
             homeAndRegistrationPage.ClickContinueOnContactForm();
-            //Thread.Sleep(2000);
-            homeAndRegistrationPage.ClickContinueOnContactForm();
-
+            homeAndRegistrationPage.FillTheAddressForm();
+            homeAndRegistrationPage.ClickOnFirstAddressFromTheList();
+            homeAndRegistrationPage.RegainFocusOnPage();
+            homeAndRegistrationPage.ClickContinueOnAddressForm();
+            homeAndRegistrationPage.WaitForContinueOnAddressPage(driver);
+            homeAndRegistrationPage.ClickContinueOnAddressForm();
+            homeAndRegistrationPage.ClickOnNoMarketingCheckbox1();
+            homeAndRegistrationPage.ClickOnNoMarketingCheckbox2();
+            homeAndRegistrationPage.ClickOnCookiesConfirmationButton();
+            homeAndRegistrationPage.ScrollToElement(driver);
+            homeAndRegistrationPage.ClickContinueOnSettingsForm();
         }
 
-        [Then(@"he should be informed about wrong location")]
-        public void ThenHeShouldBeInformedAboutWrongLocation()
+        [Then(@"user should be informed that registration was unsuccessful")]
+        public void ThenUserShouldBeInformedThatRegistrationWasUnsuccessful()
         {
-           // Assert.That(true = true);
+            var confirmationText = homeAndRegistrationPage.GetTextFromConfirmationBanner();
+            Assert.That(confirmationText, Is.EqualTo("Registration Unsuccessful"));
+            driver.Close();
         }
+
 
     }
 }
