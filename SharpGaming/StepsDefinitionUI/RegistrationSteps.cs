@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using SharpGaming.Pages;
+using SharpGaming.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +14,8 @@ using TechTalk.SpecFlow;
 namespace SharpGaming.StepsDefinition
 {
     [Binding]
-    public sealed class RegistrationSteps
+    public sealed class RegistrationSteps : DriverHelper
     {
-        IWebDriver driver;
 
         HomeAndRegistrationPage homeAndRegistrationPage = null;
 

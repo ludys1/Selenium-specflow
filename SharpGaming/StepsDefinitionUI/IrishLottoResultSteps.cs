@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using SharpGaming.Pages;
+using SharpGaming.Utils;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,9 +12,8 @@ using TechTalk.SpecFlow;
 namespace SharpGaming.StepsDefinitionUI
 {
     [Binding]
-    class IrishLottoResultSteps
+    class IrishLottoResultSteps : DriverHelper
     {
-        IWebDriver driver;
 
         IrishLottoHomeAndResultsPage irishLottoHomePage = null;
 
