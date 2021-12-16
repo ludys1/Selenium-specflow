@@ -4,6 +4,7 @@ using SharpGaming.Pages;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace SharpGaming.StepsDefinitionUI
@@ -13,7 +14,7 @@ namespace SharpGaming.StepsDefinitionUI
     {
         IWebDriver driver;
 
-        IrishLottoHomePage irishLottoHomePage = null;
+        IrishLottoHomeAndResultsPage irishLottoHomePage = null;
 
         [Given(@"user navigates to Irish Lotto page")]
         public void GivenUserNavigatesToIrishLottoPage()
@@ -22,25 +23,30 @@ namespace SharpGaming.StepsDefinitionUI
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             driver.Navigate().GoToUrl("https://www.oddsking.com/lotto/irish");
-            irishLottoHomePage = new IrishLottoHomePage(driver);
+            irishLottoHomePage = new IrishLottoHomeAndResultsPage(driver);
         }
 
         [When(@"user CTA result button")]
         public void WhenUserCTAResultButton()
         {
-            ScenarioContext.Current.Pending();
+            irishLottoHomePage.ClickResultsButton();
         }
 
         [When(@"filter result for last seven days")]
         public void WhenFilterResultForLastSevenDays()
         {
-            ScenarioContext.Current.Pending();
+            irishLottoHomePage.OpenCalenderStartDate();
+            irishLottoHomePage.SetSeventhOfDecember();
+            irishLottoHomePage.ClickOnDoneButton();
+            Thread.Sleep(2000);
+            irishLottoHomePage.ClickOnViewFilteredResutsButton();
         }
 
         [Then(@"user should only see results from seven days ago")]
         public void ThenUserShouldOnlySeeResultsFromSevenDaysAgo()
         {
-            ScenarioContext.Current.Pending();
+            irishLottoHomePage.ClickOnViewFilteredResutsButton();
+          //  driver.Close();
         }
 
     }

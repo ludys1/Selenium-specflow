@@ -38,10 +38,10 @@ namespace SharpGaming.Pages
         public IWebElement RegainFocus => WebDriver.FindElement(By.XPath("//*[@data-actionable='RegistrationPage.RegisterHeader.desktop.title']"));
         public IWebElement AddressSearchField => WebDriver.FindElement(By.XPath("//input[@data-actionable='RegistrationPage.search_address']"));
         public IWebElement AddressSearchFieldFirstFromList => WebDriver.FindElement(By.XPath("//*[@class='pcaitem pcafirstitem pcaselected']"));
-        public IWebElement NoMarketingCheckbox1 => WebDriver.FindElement(By.XPath("//*[@id='page-wrapper']/div[4]/div/form[1]/div[5]/label/div[2]/div"));
-        public IWebElement NoMarketingCheckbox2 => WebDriver.FindElement(By.XPath("//*[@id='page-wrapper']/div[4]/div/form[1]/div[9]/label/div[2]/div"));
+        public IWebElement NoMarketingCheckbox1 => WebDriver.FindElement(By.XPath("//*[@id='firstParty-No Marketing-checkbox']/.."));
+        public IWebElement NoMarketingCheckbox2 => WebDriver.FindElement(By.XPath("//*[@id='thirdParty-No Marketing-checkbox']/.."));
         public IWebElement CookiesContinueButton => WebDriver.FindElement(By.XPath("//button[@data-actionable='Header.CookieBanner.accept_cookies']"));
-        public IWebElement TextFromConfirmationBanner => WebDriver.FindElement(By.XPath("//*[@class='_1nd2lju']"));
+        public IWebElement TextFromConfirmationBanner => WebDriver.FindElement(By.XPath("//*[text() = 'Registration Unsuccessful']"));
 
 
         public void ClickJoin() => JoinButton.Click();
@@ -51,7 +51,11 @@ namespace SharpGaming.Pages
         public void ClickContinueOnContactForm() => ContinueButtOnContactPage.Click();
         public void ClickContinueOnAddressForm() => ContinueButtOnAddressPage.Click();
         public void ClickContinueOnSettingsForm() => RegisterButtOnSettingsPage.Click();
-        public void FillEmailField() => EmailField.SendKeys(FakerData.Email);
+        public HomeAndRegistrationPage FillEmailField()
+        {
+            EmailField.SendKeys(FakerData.Email);
+            return this;
+        }
         public void FillUserNameField() => UserNameField.SendKeys(FakerData.FirsName + "23");
         public void FillPasswordField() => PasswordField.SendKeys(FakerData.Pass + '1');
         public void FillFirstNameField() => FirstNameField.SendKeys(FakerData.FirsName);

@@ -38,8 +38,8 @@ namespace SharpGaming.StepsDefinition
         [When(@"user fill the register form")]
         public void WhenUserFillTheRegisterForm()
         {
-            homeAndRegistrationPage.FillEmailField();
-            homeAndRegistrationPage.FillUserNameField();
+            homeAndRegistrationPage.FillEmailField()
+            .FillUserNameField();
             homeAndRegistrationPage.FillPasswordField();
             homeAndRegistrationPage.ClickOnCheckBox();
             homeAndRegistrationPage.WaitForContinueOnAccounPage(driver);
