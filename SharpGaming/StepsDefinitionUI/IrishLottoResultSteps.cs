@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using SharpGaming.Pages;
 using System;
@@ -36,9 +37,14 @@ namespace SharpGaming.StepsDefinitionUI
         public void WhenFilterResultForLastSevenDays()
         {
             irishLottoHomePage.OpenCalenderStartDate();
-            irishLottoHomePage.SetSeventhOfDecember();
+
+            if ( DateTime.Now.Day <= 7)
+            {
+                irishLottoHomePage.ClickOnPreviousMonthButton();
+            }
+        
+            irishLottoHomePage.ClickOnSevenDaysFromTodayDate();
             irishLottoHomePage.ClickOnDoneButton();
-            Thread.Sleep(2000);
             irishLottoHomePage.ClickOnViewFilteredResutsButton();
         }
 
@@ -46,7 +52,12 @@ namespace SharpGaming.StepsDefinitionUI
         public void ThenUserShouldOnlySeeResultsFromSevenDaysAgo()
         {
             irishLottoHomePage.ClickOnViewFilteredResutsButton();
-          //  driver.Close();
+            var searchResultString = irishLottoHomePage.GetDatesFromFilterResults();
+            var searchResultDate = searchResultString.Substring(0, 11);
+            var searchResultDateInDateTimeFormat = Convert.ToDateTime(searchResultDate);
+
+            Assert.That(irishLottoHomePage.CheckDateRange(searchResultDateInDateTimeFormat) == true);
+            driver.Close();
         }
 
     }

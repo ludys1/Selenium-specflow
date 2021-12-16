@@ -13,7 +13,10 @@ C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\Sharp
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\SharpGaming.dll
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\SharpGaming.pdb
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\BoDi.dll
+C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\Bogus.dll
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\Dynamitey.dll
+C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\Flurl.dll
+C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\Flurl.Http.dll
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\Gherkin.dll
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\Microsoft.DotNet.InternalAbstractions.dll
@@ -29,6 +32,7 @@ C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\Newto
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\nunit.framework.dll
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\WebDriver.dll
+C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\SeleniumExtras.WaitHelpers.dll
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\TechTalk.SpecFlow.dll
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\SpecFlow.Assist.Dynamic.dll
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\SpecFlow.Internal.Json.dll
@@ -102,7 +106,6 @@ C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\zh-Ha
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\filu\source\repos\SharpGaming\SharpGaming\obj\Debug\netcoreapp3.1\SharpGaming.csproj.AssemblyReference.cache
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\obj\Debug\netcoreapp3.1\SharpGaming.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\obj\Debug\netcoreapp3.1\SharpGaming.AssemblyInfoInputs.cache
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\obj\Debug\netcoreapp3.1\SharpGaming.AssemblyInfo.cs
@@ -111,7 +114,4 @@ C:\Users\filu\source\repos\SharpGaming\SharpGaming\obj\Debug\netcoreapp3.1\Sharp
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\obj\Debug\netcoreapp3.1\SharpGaming.dll
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\obj\Debug\netcoreapp3.1\SharpGaming.pdb
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\obj\Debug\netcoreapp3.1\SharpGaming.genruntimeconfig.cache
-C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\Bogus.dll
-C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\Flurl.dll
-C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\Flurl.Http.dll
-C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\SeleniumExtras.WaitHelpers.dll
+C:\Users\filu\source\repos\SharpGaming\SharpGaming\obj\Debug\netcoreapp3.1\SharpGaming.csproj.AssemblyReference.cache

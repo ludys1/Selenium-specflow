@@ -1,3 +1,9 @@
-﻿.vs/*
+﻿.vs/
 
 *.feature.cs
+
+obj/Debug/
+
+obj/
+
+bin/

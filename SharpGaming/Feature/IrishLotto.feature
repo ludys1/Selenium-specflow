@@ -1,8 +1,8 @@
 ﻿Feature: IrishLotto
 	Check the results of Irish Lotto for last 7 days
 
-@mytag
-Scenario: Add two numbers
+@smoke
+Scenario: Check if filtering by date is working properly
 	Given user navigates to Irish Lotto page
 	When user CTA result button
 	And filter result for last seven days

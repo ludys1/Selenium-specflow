@@ -8,18 +8,19 @@ namespace SharpGaming.StepDefinitionAPI
     [Binding]
     public sealed class HealthTestSteps
     {
+
+        private string healthServiceStaus; 
+
         [Given(@"user asks api for health")]
         public async Task GivenUserApiAsksForHealth()
         {
-            await ApiRequests.GetHealthStatus();
+            healthServiceStaus = await ApiRequests.GetHealthStatus();
         }
 
         [Then(@"health service should be ok")]
         public async Task ThenHealthShouldBeOk()
         {
-            var healthServiceStaus = await ApiRequests.GetHealthStatus();
             Assert.That(healthServiceStaus == "OK");
         }
-
     }
 }
