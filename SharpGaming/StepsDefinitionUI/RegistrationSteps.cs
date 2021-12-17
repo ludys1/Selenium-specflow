@@ -1,13 +1,8 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
 using SharpGaming.Pages;
 using SharpGaming.Utils;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using TechTalk.SpecFlow;
 
@@ -38,8 +33,8 @@ namespace SharpGaming.StepsDefinition
         [When(@"user fill the register account from")]
         public void WhenUserFillTheRegisterAccountFrom()
         {
-            homeAndRegistrationPage.FillEmailField()
-            .FillUserNameField();
+            homeAndRegistrationPage.FillEmailField();
+            homeAndRegistrationPage.FillUserNameField();
             homeAndRegistrationPage.FillPasswordField();
             homeAndRegistrationPage.ClickOnCheckBox();
             homeAndRegistrationPage.WaitForContinueOnAccounPage(driver);
@@ -64,9 +59,9 @@ namespace SharpGaming.StepsDefinition
             homeAndRegistrationPage.FillTelephoneNumber();
             homeAndRegistrationPage.OpenSecurityQuestionList();
             homeAndRegistrationPage.SelectSecurityQuestion();
-            homeAndRegistrationPage.OpenSecurityQuestionList();
+        //    homeAndRegistrationPage.OpenSecurityQuestionList();
             homeAndRegistrationPage.FillSecurityQuestionAnswer();
-            homeAndRegistrationPage.RegainFocusOnPage();
+        //    homeAndRegistrationPage.RegainFocusOnPage();
             homeAndRegistrationPage.WaitForContinueOnContactPage(driver);
             homeAndRegistrationPage.ClickContinueOnContactForm();
         }
@@ -78,17 +73,16 @@ namespace SharpGaming.StepsDefinition
             homeAndRegistrationPage.ClickOnFirstAddressFromTheList();
             homeAndRegistrationPage.ClickOnCookiesConfirmationButton();
             homeAndRegistrationPage.RegainFocusOnPage();
+            Thread.Sleep(2000);
             homeAndRegistrationPage.ClickContinueOnAddressForm();
         }
 
         [When(@"user fill the settings form")]
         public void WhenUserFillTheSettingsForm()
         {
-            homeAndRegistrationPage.WaitForContinueOnAddressPage(driver);
-            homeAndRegistrationPage.ClickContinueOnAddressForm();
+            
             homeAndRegistrationPage.ClickOnNoMarketingCheckbox1();
             homeAndRegistrationPage.ClickOnNoMarketingCheckbox2();
-      //      homeAndRegistrationPage.ClickOnCookiesConfirmationButton();
             homeAndRegistrationPage.ScrollToElement(driver);
             homeAndRegistrationPage.ClickContinueOnSettingsForm();
         }
@@ -100,7 +94,5 @@ namespace SharpGaming.StepsDefinition
             Assert.That(confirmationText, Is.EqualTo("Registration Unsuccessful"));
             driver.Close();
         }
-
-
     }
 }

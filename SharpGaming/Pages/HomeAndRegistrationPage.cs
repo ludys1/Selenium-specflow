@@ -42,7 +42,7 @@ namespace SharpGaming.Pages
         public IWebElement NoMarketingCheckbox2 => WebDriver.FindElement(By.XPath("//*[@id='thirdParty-No Marketing-checkbox']/.."));
         public IWebElement CookiesContinueButton => WebDriver.FindElement(By.XPath("//button[@data-actionable='Header.CookieBanner.accept_cookies']"));
         public IWebElement TextFromConfirmationBanner => WebDriver.FindElement(By.XPath("//*[text() = 'Registration Unsuccessful']"));
-
+        public IWebElement TextCheckAndConfirmHomeAddress => WebDriver.FindElement(By.XPath("//*[text() = 'Please check and confirm if this is your correct home address.']"));
 
         public void ClickJoin() => JoinButton.Click();
         public void ClickOnCheckBox() => CheckBoxTandC.Click();
@@ -51,11 +51,7 @@ namespace SharpGaming.Pages
         public void ClickContinueOnContactForm() => ContinueButtOnContactPage.Click();
         public void ClickContinueOnAddressForm() => ContinueButtOnAddressPage.Click();
         public void ClickContinueOnSettingsForm() => RegisterButtOnSettingsPage.Click();
-        public HomeAndRegistrationPage FillEmailField()
-        {
-            EmailField.SendKeys(FakerData.Email);
-            return this;
-        }
+        public void FillEmailField() => EmailField.SendKeys(FakerData.Email);
         public void FillUserNameField() => UserNameField.SendKeys(FakerData.FirsName + "23");
         public void FillPasswordField() => PasswordField.SendKeys(FakerData.Pass + '1');
         public void FillFirstNameField() => FirstNameField.SendKeys(FakerData.FirsName);
@@ -88,12 +84,6 @@ namespace SharpGaming.Pages
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@data-actionable='RegistrationPage.ContactSection.desktop_security_answer-isSuccess']")));
         }
 
-        public void WaitForContinueOnAddressPage(IWebDriver driver)
-        {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//button[@data-actionable='RegistrationPage.NavigationButtonsPage4.Continue']")));
-        }
-
         public void ScrollToElement(IWebDriver driver)
         {
             var element = driver.FindElement(By.XPath("//button[@data-actionable='RegistrationPage.NavigationButtonsPage5.Register']"));
@@ -105,6 +95,11 @@ namespace SharpGaming.Pages
         public string GetTextFromConfirmationBanner()
         {
             return TextFromConfirmationBanner.Text;
+        }
+        public void WaitForTextToBeVisible(IWebDriver driver)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(6));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[text() = 'Please check and confirm if this is your correct home address.']")));
         }
     }
 }
