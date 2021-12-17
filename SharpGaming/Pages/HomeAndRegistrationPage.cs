@@ -43,6 +43,10 @@ namespace SharpGaming.Pages
         public IWebElement CookiesContinueButton => WebDriver.FindElement(By.XPath("//button[@data-actionable='Header.CookieBanner.accept_cookies']"));
         public IWebElement TextFromConfirmationBanner => WebDriver.FindElement(By.XPath("//*[text() = 'Registration Unsuccessful']"));
         public IWebElement TextCheckAndConfirmHomeAddress => WebDriver.FindElement(By.XPath("//*[text() = 'Please check and confirm if this is your correct home address.']"));
+        public IWebElement OutsideUkButton => WebDriver.FindElement(By.XPath("//button[@data-actionable='InputLabel.outsidetheuk?']"));
+        public IWebElement AddressLine1Field => WebDriver.FindElement(By.XPath("//input[@id='RegistrationPage.AddressEditor.line1']"));
+        public IWebElement CityField => WebDriver.FindElement(By.XPath("//input[@id='RegistrationPage.AddressEditor.city']"));
+
 
         public void ClickJoin() => JoinButton.Click();
         public void ClickOnCheckBox() => CheckBoxTandC.Click();
@@ -64,11 +68,12 @@ namespace SharpGaming.Pages
         public void SelectSecurityQuestion() => MothersMaidenOptionFromSecurityQuestionList.Click();
         public void FillSecurityQuestionAnswer() => SecurityQuestionAnswerField.SendKeys(FakerData.LastName);
         public void RegainFocusOnPage() => RegainFocus.Click();
-        public void FillTheAddressForm() => AddressSearchField.SendKeys("Prusa");
-        public void ClickOnFirstAddressFromTheList() => AddressSearchFieldFirstFromList.Click();
         public void ClickOnNoMarketingCheckbox1() => NoMarketingCheckbox1.Click();
         public void ClickOnNoMarketingCheckbox2() => NoMarketingCheckbox2.Click();
         public void ClickOnCookiesConfirmationButton() => CookiesContinueButton.Click();
+        public void ClickOnOutsideUkButton() => OutsideUkButton.Click();
+        public void FillAddressLine1Field() => AddressLine1Field.SendKeys(FakerData.Street);
+        public void FillCityField() => CityField.SendKeys(FakerData.City);
 
         public void WaitForContinueOnAccounPage(IWebDriver driver)
         {

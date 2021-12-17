@@ -10,6 +10,8 @@ namespace SharpGaming.Utils
         public static string Email => new Bogus.Faker().Internet.ExampleEmail();
         public static string Text => new Bogus.Faker().Company.Random.Word();
         public static string Country => new Bogus.Faker().Address.Country();
+        public static string City => new Bogus.Faker().Address.City();
+        public static string Street => new Bogus.Faker().Address.StreetAddress();
         public static string PhoneNumber => new Faker().Phone.PhoneNumber("#########");
         public static string Pass => new Faker().Internet.Password();
         public static string Day => new Bogus.Faker().Random.Number(1, 28).ToString();

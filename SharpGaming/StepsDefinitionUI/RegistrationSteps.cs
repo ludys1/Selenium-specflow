@@ -56,31 +56,26 @@ namespace SharpGaming.StepsDefinition
         [When(@"user fill the contact form")]
         public void WhenUserFillTheContactForm()
         {
+            homeAndRegistrationPage.FillSecurityQuestionAnswer();
             homeAndRegistrationPage.FillTelephoneNumber();
             homeAndRegistrationPage.OpenSecurityQuestionList();
             homeAndRegistrationPage.SelectSecurityQuestion();
-        //    homeAndRegistrationPage.OpenSecurityQuestionList();
-            homeAndRegistrationPage.FillSecurityQuestionAnswer();
-        //    homeAndRegistrationPage.RegainFocusOnPage();
-            homeAndRegistrationPage.WaitForContinueOnContactPage(driver);
             homeAndRegistrationPage.ClickContinueOnContactForm();
         }
 
         [When(@"user fill the address form")]
         public void WhenUserFillTheAddressForm()
         {
-            homeAndRegistrationPage.FillTheAddressForm();
-            homeAndRegistrationPage.ClickOnFirstAddressFromTheList();
+            homeAndRegistrationPage.ClickOnOutsideUkButton();
+            homeAndRegistrationPage.FillAddressLine1Field();
+            homeAndRegistrationPage.FillCityField();
             homeAndRegistrationPage.ClickOnCookiesConfirmationButton();
-            homeAndRegistrationPage.RegainFocusOnPage();
-            Thread.Sleep(2000);
             homeAndRegistrationPage.ClickContinueOnAddressForm();
         }
 
         [When(@"user fill the settings form")]
         public void WhenUserFillTheSettingsForm()
-        {
-            
+        {         
             homeAndRegistrationPage.ClickOnNoMarketingCheckbox1();
             homeAndRegistrationPage.ClickOnNoMarketingCheckbox2();
             homeAndRegistrationPage.ScrollToElement(driver);
