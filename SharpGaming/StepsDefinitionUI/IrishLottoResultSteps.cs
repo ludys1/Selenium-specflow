@@ -51,14 +51,18 @@ namespace SharpGaming.StepsDefinitionUI
         [Then(@"user should only see results from seven days ago")]
         public void ThenUserShouldOnlySeeResultsFromSevenDaysAgo()
         {
-            irishLottoHomePage.ClickOnViewFilteredResutsButton();
-            var searchResultString = irishLottoHomePage.GetDatesFromFilterResults();
-            var searchResultDate = searchResultString.Substring(0, 11);
-            var searchResultDateInDateTimeFormat = Convert.ToDateTime(searchResultDate);
+            Thread.Sleep(2000);
+            var searchResultStringList = irishLottoHomePage.FilterResultsList;            
 
-            Assert.That(irishLottoHomePage.CheckDateRange(searchResultDateInDateTimeFormat) == true);
+            foreach (var item in searchResultStringList)
+            {
+                
+                var textFromSubstring = item.Text.Substring(0,11);
+                var result = Convert.ToDateTime(textFromSubstring);
+                Assert.That(irishLottoHomePage.CheckDateRange(result) == true);          
+            }
             driver.Close();
-        }
 
+        }
     }
 }

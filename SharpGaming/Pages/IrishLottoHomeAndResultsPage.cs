@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace SharpGaming.Pages
 {
@@ -20,9 +21,10 @@ namespace SharpGaming.Pages
 
         public IWebElement SevenDaysBeforeToday(int day) => WebDriver.FindElement(By.XPath($"//*[contains(@class,'Form.Datepicker.DayButton-{day}') and not(@disabled)]"));
         public IWebElement PreviousMonthButton => WebDriver.FindElement(By.XPath("//*[@data-actionable='Form.Datepicker.CalendarPreviousMonthButton']"));
-        public IWebElement FilterResult => WebDriver.FindElement(By.XPath("//*[contains(@data-actionable,'Lotto.DrawTile-IRISHLOTTERY')]"));
+        
 
-        public List<IWebElement> FilterResults => (List<IWebElement>)WebDriver.FindElement(By.XPath("//*[contains(@data-actionable,'Lotto.DrawTile-IRISHLOTTERY')]"));
+        public List<IWebElement> FilterResultsList => WebDriver.FindElements(By.XPath("//*[contains(@data-actionable,'Lotto.DrawTile-IRISHLOTTERY')]")).ToList();
+
 
 
         public void ClickResultsButton() => ResultsButton.Click();
@@ -37,7 +39,17 @@ namespace SharpGaming.Pages
         }
 
         public void ClickOnPreviousMonthButton() => PreviousMonthButton.Click();
-        public string GetDatesFromFilterResults() => FilterResult.Text;
+    //    public string GetDateFromFirstFilterResult() => FilterResult.Text;
+
+
+
+        //public string GetDatesFromAllFilterResults()
+        //{
+        //    for (int i = 0; i < FilterResults.Count; i++)
+        //    {
+        //        return FilterResults[i]
+        //    }
+        //}
 
         public bool CheckDateRange(DateTime date)
         {
@@ -46,6 +58,7 @@ namespace SharpGaming.Pages
 
             if (dateInPast <= date && date <= today)
             {
+                
                 return true;
             }
             else
