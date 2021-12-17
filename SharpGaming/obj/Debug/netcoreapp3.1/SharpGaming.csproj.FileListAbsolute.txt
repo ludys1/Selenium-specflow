@@ -106,6 +106,7 @@ C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\zh-Ha
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\filu\source\repos\SharpGaming\SharpGaming\obj\Debug\netcoreapp3.1\SharpGaming.csproj.AssemblyReference.cache
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\obj\Debug\netcoreapp3.1\SharpGaming.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\obj\Debug\netcoreapp3.1\SharpGaming.AssemblyInfoInputs.cache
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\obj\Debug\netcoreapp3.1\SharpGaming.AssemblyInfo.cs
@@ -114,4 +115,3 @@ C:\Users\filu\source\repos\SharpGaming\SharpGaming\obj\Debug\netcoreapp3.1\Sharp
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\obj\Debug\netcoreapp3.1\SharpGaming.dll
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\obj\Debug\netcoreapp3.1\SharpGaming.pdb
 C:\Users\filu\source\repos\SharpGaming\SharpGaming\obj\Debug\netcoreapp3.1\SharpGaming.genruntimeconfig.cache
-C:\Users\filu\source\repos\SharpGaming\SharpGaming\obj\Debug\netcoreapp3.1\SharpGaming.csproj.AssemblyReference.cache

@@ -68,7 +68,7 @@ namespace SharpGaming.Pages
         public void SelectSecurityQuestion() => MothersMaidenOptionFromSecurityQuestionList.Click();
         public void FillSecurityQuestionAnswer() => SecurityQuestionAnswerField.SendKeys(FakerData.LastName);
         public void RegainFocusOnPage() => RegainFocus.Click();
-        public void FillTheAddressForm() => AddressSearchField.SendKeys(FakerData.FirsName);
+        public void FillTheAddressForm() => AddressSearchField.SendKeys("Prusa");
         public void ClickOnFirstAddressFromTheList() => AddressSearchFieldFirstFromList.Click();
         public void ClickOnNoMarketingCheckbox1() => NoMarketingCheckbox1.Click();
         public void ClickOnNoMarketingCheckbox2() => NoMarketingCheckbox2.Click();

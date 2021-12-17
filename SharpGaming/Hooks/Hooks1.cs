@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using SharpGaming.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using TechTalk.SpecFlow;
 namespace SharpGaming.SpecflowHooks
 {
     [Binding]
-    public sealed class Hooks1
+    public sealed class Hooks1 : DriverHelper
     {
         // For additional details on SpecFlow hooks see http://go.specflow.org/doc-hooks
 
@@ -25,7 +26,7 @@ namespace SharpGaming.SpecflowHooks
         [AfterScenario]
         public void AfterScenario()
         {
-            //TODO: implement logic that has to run after executing each scenario
+          //  driver.Quit();
         }
     }
 }

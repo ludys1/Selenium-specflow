@@ -29,14 +29,14 @@ namespace SharpGaming.StepsDefinition
             homeAndRegistrationPage = new HomeAndRegistrationPage(driver);
         }
 
-        [Given(@"user CTA register button")]
-        public void GivenUserCTARegisterButton()
+        [Given(@"user CTA join button")]
+        public void GivenUserCTAJoinButton()
         {
             homeAndRegistrationPage.ClickJoin();
         }
 
-        [When(@"user fill the register form")]
-        public void WhenUserFillTheRegisterForm()
+        [When(@"user fill the register account from")]
+        public void WhenUserFillTheRegisterAccountFrom()
         {
             homeAndRegistrationPage.FillEmailField()
             .FillUserNameField();
@@ -44,6 +44,11 @@ namespace SharpGaming.StepsDefinition
             homeAndRegistrationPage.ClickOnCheckBox();
             homeAndRegistrationPage.WaitForContinueOnAccounPage(driver);
             homeAndRegistrationPage.ClickContinueOnAccountForm();
+        }
+
+        [When(@"user fill the personal form")]
+        public void WhenUserFillThePersonalForm()
+        {
             homeAndRegistrationPage.FillFirstNameField();
             homeAndRegistrationPage.FillLastNameField();
             homeAndRegistrationPage.FillDayOfBirth();
@@ -51,6 +56,11 @@ namespace SharpGaming.StepsDefinition
             homeAndRegistrationPage.FillYearOfBirth();
             homeAndRegistrationPage.ClickContinueOnPersonalForm();
             homeAndRegistrationPage.ClickContinueOnPersonalForm();
+        }
+
+        [When(@"user fill the contact form")]
+        public void WhenUserFillTheContactForm()
+        {
             homeAndRegistrationPage.FillTelephoneNumber();
             homeAndRegistrationPage.OpenSecurityQuestionList();
             homeAndRegistrationPage.SelectSecurityQuestion();
@@ -59,15 +69,26 @@ namespace SharpGaming.StepsDefinition
             homeAndRegistrationPage.RegainFocusOnPage();
             homeAndRegistrationPage.WaitForContinueOnContactPage(driver);
             homeAndRegistrationPage.ClickContinueOnContactForm();
+        }
+
+        [When(@"user fill the address form")]
+        public void WhenUserFillTheAddressForm()
+        {
             homeAndRegistrationPage.FillTheAddressForm();
             homeAndRegistrationPage.ClickOnFirstAddressFromTheList();
+            homeAndRegistrationPage.ClickOnCookiesConfirmationButton();
             homeAndRegistrationPage.RegainFocusOnPage();
             homeAndRegistrationPage.ClickContinueOnAddressForm();
+        }
+
+        [When(@"user fill the settings form")]
+        public void WhenUserFillTheSettingsForm()
+        {
             homeAndRegistrationPage.WaitForContinueOnAddressPage(driver);
             homeAndRegistrationPage.ClickContinueOnAddressForm();
             homeAndRegistrationPage.ClickOnNoMarketingCheckbox1();
             homeAndRegistrationPage.ClickOnNoMarketingCheckbox2();
-            homeAndRegistrationPage.ClickOnCookiesConfirmationButton();
+      //      homeAndRegistrationPage.ClickOnCookiesConfirmationButton();
             homeAndRegistrationPage.ScrollToElement(driver);
             homeAndRegistrationPage.ClickContinueOnSettingsForm();
         }
