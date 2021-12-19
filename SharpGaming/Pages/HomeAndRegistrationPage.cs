@@ -52,6 +52,7 @@ namespace SharpGaming.Pages
         public void ClickOnCheckBox() => CheckBoxTandC.Click();
         public void ClickContinueOnAccountForm() => ContinueButtOnAccountPage.Click();
         public void ClickContinueOnPersonalForm() => ContinueButtOnPersonalPage.Click();
+        public void ClickAgainContinueOnPersonalForm() => ContinueButtOnPersonalPage.Click();
         public void ClickContinueOnContactForm() => ContinueButtOnContactPage.Click();
         public void ClickContinueOnAddressForm() => ContinueButtOnAddressPage.Click();
         public void ClickContinueOnSettingsForm() => RegisterButtOnSettingsPage.Click();

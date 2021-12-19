@@ -50,7 +50,7 @@ namespace SharpGaming.StepsDefinition
             homeAndRegistrationPage.FillMonthOfBirth();
             homeAndRegistrationPage.FillYearOfBirth();
             homeAndRegistrationPage.ClickContinueOnPersonalForm();
-            homeAndRegistrationPage.ClickContinueOnPersonalForm();
+            homeAndRegistrationPage.ClickAgainContinueOnPersonalForm();
         }
 
         [When(@"user fill the contact form")]
@@ -60,7 +60,8 @@ namespace SharpGaming.StepsDefinition
             homeAndRegistrationPage.FillTelephoneNumber();
             homeAndRegistrationPage.OpenSecurityQuestionList();
             homeAndRegistrationPage.SelectSecurityQuestion();
-            homeAndRegistrationPage.ClickContinueOnContactForm();
+            homeAndRegistrationPage.WaitForContinueOnContactPage(driver);
+            homeAndRegistrationPage.ClickContinueOnContactForm();          
         }
 
         [When(@"user fill the address form")]
